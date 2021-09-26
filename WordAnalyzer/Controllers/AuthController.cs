@@ -17,7 +17,7 @@ namespace WordAnalyzer.Controllers
             this.service = service;
         }
 
-        [HttpGet]       
+        [HttpPost]       
         public MessageModel<string> Auth([FromBody] TextModel text)
         {
             return service.GenerateToken(text.Body);

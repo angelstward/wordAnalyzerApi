@@ -22,7 +22,7 @@ namespace WordAnalyzer.Domain.Services
             MessageModel<string> message = new MessageModel<string>();
             string secret = _configuration.GetSection("Credentials")["secret"];
 
-            if (GetSHA256(secret) == sha)
+            if (/*GetSHA256(secret)*/ secret == sha)
             {
                 
                 try

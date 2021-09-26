@@ -1,8 +1,10 @@
 import { Component, OnInit } from "@angular/core";
+import { environment } from "src/environments/environment";
 import { MessageModel } from "../models/message.model";
 import { TextModel } from "../models/Text.model";
 import { WordModel } from "../models/word.model";
 import { SenderService } from "../services/sender.service";
+import shajs from 'sha.js';
 
 @Component({
   selector: "app-home",
@@ -10,7 +12,11 @@ import { SenderService } from "../services/sender.service";
   styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
-  ngOnInit(): void {}
+
+  ngOnInit(): void {  
+    localStorage.clear();  
+    this.GetToken();
+  }
 
   constructor(private service: SenderService) {}
 
@@ -40,4 +46,15 @@ export class HomeComponent implements OnInit {
     this.listWords = [];
 
   }
+
+  private GetToken(): void{ 
+    const secret = environment.secret; 
+    this.service.GetToken({body: secret}).subscribe(response =>{
+      if(response.status){
+        localStorage.setItem("token", response.data);
+      }
+    });
+  }
+
+
 }
