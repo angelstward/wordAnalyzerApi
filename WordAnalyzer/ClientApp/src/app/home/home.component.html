@@ -20,16 +20,11 @@
   <table *ngIf="listWords" class="table">
     <tr>
       <th>Palabra</th>
-
       <th>Número de repeticiones</th>
     </tr>
-
     <tr *ngFor="let item of listWords">
       <td>{{item.description}}</td>
-
       <td>{{item.count}}</td>
-    </tr> 
-
-    
+    </tr>     
   </table>
 </div>

@@ -7,14 +7,12 @@ using WordAnalyzer.Domain.Models;
 namespace WordAnalyzer.Domain.Services
 {
     public class ProcessorTextService : IProcessorTextService
-    {
-        private const string pattern = "[az]";
+    {        
         private const string patternInvalid = "[!||,||.||*||+||@||0-9]||#||$||%||&||'||¡||°||!||-||_]";
         public MessageModel<List<WordModel>> Process(TextModel text)
         {
             MessageModel<List<WordModel>> messageModel = new MessageModel<List<WordModel>>();
-            List<WordModel> wordModels = new List<WordModel>();
-            Regex rg = new Regex(pattern);
+            List<WordModel> wordModels = new List<WordModel>();            
             text.Body = text.Body.ToLower();
             try
             {
@@ -45,7 +43,7 @@ namespace WordAnalyzer.Domain.Services
             return messageModel;
         }
 
-        private int CounterWords(string item, string[] palabras)
+        public int CounterWords(string item, string[] palabras)
         {
             int counter = 0;
             foreach(var element in palabras)

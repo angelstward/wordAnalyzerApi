@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordAnalyzer", "WordAnalyze
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordAnalyzer.Domain", "WordAnalyzer.Domain\WordAnalyzer.Domain.csproj", "{4C0FE93C-DFD7-4633-A664-E98E2FFB7F50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordAnalyzer.Tests", "WordAnalyzer.Tests\WordAnalyzer.Tests.csproj", "{FD4A242E-6AB1-4643-8A3B-A870FF0B7231}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{4C0FE93C-DFD7-4633-A664-E98E2FFB7F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C0FE93C-DFD7-4633-A664-E98E2FFB7F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C0FE93C-DFD7-4633-A664-E98E2FFB7F50}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FD4A242E-6AB1-4643-8A3B-A870FF0B7231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD4A242E-6AB1-4643-8A3B-A870FF0B7231}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD4A242E-6AB1-4643-8A3B-A870FF0B7231}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD4A242E-6AB1-4643-8A3B-A870FF0B7231}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
