@@ -8,7 +8,7 @@ namespace WordAnalyzer.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [Authorize]
+    //[Authorize]
     public class ProcessorController : ControllerBase
     {
         private readonly IProcessorTextService service;
