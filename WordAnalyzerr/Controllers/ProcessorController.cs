@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using WordAnalyzer.Domain.Models;
 using WordAnalyzer.Domain.Services;
 
-namespace WordAnalyzer.Controllers
+namespace WordAnalyzerr.Controllers
 {
     [ApiController]
     [Route("[controller]")]
