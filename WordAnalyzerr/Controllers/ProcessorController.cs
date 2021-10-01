@@ -1,13 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using WordAnalyzer.Domain.Models;
 using WordAnalyzer.Domain.Services;
 
-namespace WordAnalyzerr.Controllers
+namespace WordAnalyzer.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    //[Authorize]
+    [Authorize]
     public class ProcessorController : ControllerBase
     {
         private readonly IProcessorTextService service;

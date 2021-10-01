@@ -2,7 +2,7 @@
 using WordAnalyzer.Domain.Models;
 using WordAnalyzer.Domain.Services;
 
-namespace WordAnalyzerr.Controllers
+namespace WordAnalyzer.Controllers
 {
     [ApiController]
     [Route("[controller]")]

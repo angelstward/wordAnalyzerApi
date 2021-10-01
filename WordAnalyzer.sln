@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordAnalyzer", "WordAnalyzer\WordAnalyzer.csproj", "{95D79BB6-D731-41D8-8455-B3B55742F9A4}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WordAnalyzer.Domain", "WordAnalyzer.Domain\WordAnalyzer.Domain.csproj", "{4C0FE93C-DFD7-4633-A664-E98E2FFB7F50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordAnalyzerr", "WordAnalyzerr\WordAnalyzerr.csproj", "{9EA0460D-37FC-4A37-9AB6-8A7E36508DE8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordAnalyzer", "WordAnalyzerr\WordAnalyzer.csproj", "{9EA0460D-37FC-4A37-9AB6-8A7E36508DE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{95D79BB6-D731-41D8-8455-B3B55742F9A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{95D79BB6-D731-41D8-8455-B3B55742F9A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{95D79BB6-D731-41D8-8455-B3B55742F9A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{95D79BB6-D731-41D8-8455-B3B55742F9A4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4C0FE93C-DFD7-4633-A664-E98E2FFB7F50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4C0FE93C-DFD7-4633-A664-E98E2FFB7F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C0FE93C-DFD7-4633-A664-E98E2FFB7F50}.Release|Any CPU.ActiveCfg = Release|Any CPU

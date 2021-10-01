@@ -19,6 +19,8 @@ namespace WordAnalyzerr
 {
     public class Startup
     {
+
+        private readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -50,6 +52,8 @@ namespace WordAnalyzerr
                 };
             });
 
+            services.AddCors();
+
             services.AddTransient<IProcessorTextService, ProcessorTextService>();
             services.AddTransient<IAuthenticationService, AuthenticationService>();
         }
@@ -64,10 +68,14 @@ namespace WordAnalyzerr
 
             app.UseHttpsRedirection();
 
-            app.UseRouting();
-
             app.UseAuthentication();
+            app.UseRouting();
             app.UseAuthorization();
+            app.UseCors(x => x
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+               .SetIsOriginAllowed(origin => true)
+               .AllowCredentials());
 
             app.UseEndpoints(endpoints =>
             {
