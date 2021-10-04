@@ -7,33 +7,36 @@ using WordAnalyzer.Domain.Models;
 namespace WordAnalyzer.Domain.Services
 {
     public class ProcessorTextService : IProcessorTextService
-    {        
+    {
         private const string patternInvalid = "[!||,||.||*||+||@||0-9]||#||$||%||&||'||¡||°||!||-||_]";
         public MessageModel<List<WordModel>> Process(TextModel text)
         {
             MessageModel<List<WordModel>> messageModel = new MessageModel<List<WordModel>>();
-            List<WordModel> wordModels = new List<WordModel>();            
+            List<WordModel> wordModels = new List<WordModel>();
             text.Body = text.Body.ToLower();
             try
-            {            
+            {
                 string textoCompleto = Regex.Replace(text.Body, patternInvalid, "");
                 Console.WriteLine(textoCompleto);
                 string[] palabras = textoCompleto.Split(' ');
                 string[] textDisctinc = string.Join(" ", textoCompleto.Split(' ').Distinct()).Split(' ');
                 foreach (string item in textDisctinc)
                 {
-                    WordModel wordModel = new WordModel
+                    if (!string.IsNullOrEmpty(item))
                     {
-                        Description = item,                        
-                        Count = CounterWords(item, palabras)
-                    };
-                    wordModels.Add(wordModel);
+                        WordModel wordModel = new WordModel
+                        {
+                            Description = item,
+                            Count = CounterWords(item, palabras)
+                        };
+                        wordModels.Add(wordModel);
+                    }
                 }
                 messageModel.Status = true;
                 messageModel.Data = wordModels;
             }
-            
-            catch(Exception ex)
+
+            catch (Exception ex)
             {
                 messageModel.Status = false;
                 messageModel.Message = ex.Message;
@@ -44,11 +47,11 @@ namespace WordAnalyzer.Domain.Services
         public int CounterWords(string item, string[] palabras)
         {
             int counter = 0;
-            foreach(var element in palabras)
+            foreach (string element in palabras)
             {
                 _ = element == item ? counter++ : counter;
             }
-            return counter;            
+            return counter;
         }
     }
 }
