@@ -52,7 +52,14 @@ namespace WordAnalyzerr
                 };
             });
 
-            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                    builder => builder.AllowAnyOrigin().WithOrigins("https://localhost:44374")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            });
 
             services.AddTransient<IProcessorTextService, ProcessorTextService>();
             services.AddTransient<IAuthenticationService, AuthenticationService>();
