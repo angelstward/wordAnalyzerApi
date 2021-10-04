@@ -15,8 +15,7 @@ namespace WordAnalyzer.Domain.Services
             List<WordModel> wordModels = new List<WordModel>();            
             text.Body = text.Body.ToLower();
             try
-            {
-                //MatchCollection matchedAttributes = rg.Matches(text.Body);
+            {            
                 string textoCompleto = Regex.Replace(text.Body, patternInvalid, "");
                 Console.WriteLine(textoCompleto);
                 string[] palabras = textoCompleto.Split(' ');
@@ -25,8 +24,7 @@ namespace WordAnalyzer.Domain.Services
                 {
                     WordModel wordModel = new WordModel
                     {
-                        Description = item,
-                        //Count = (int)text.Body.LongCount(word => word.ToString() == item);
+                        Description = item,                        
                         Count = CounterWords(item, palabras)
                     };
                     wordModels.Add(wordModel);
