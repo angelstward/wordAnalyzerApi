@@ -37,6 +37,7 @@ namespace WordAnalyzer.Domain.Services
                     {
                         Subject = claims,
                         Expires = DateTime.UtcNow.AddHours(time),
+                        SigningCredentials = new SigningCredentials(IssuerSigningKey, SecurityAlgorithms.HmacSha256)
                     };
 
                     JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
