@@ -28,7 +28,7 @@ namespace WordAnalyzer.Domain.Services
                         Count = CounterWords(item, palabras)
                     };
                     wordModels.Add(wordModel);
-                };
+                }
                 messageModel.Status = true;
                 messageModel.Data = wordModels;
             }
